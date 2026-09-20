@@ -7,7 +7,6 @@ export const site = {
   supportEmail: "support@sarkaripath.onl",
   // Social / contact
   telegram: "https://t.me/your_channel",
-  // Payment (Razorpay payment link ya UPI baad me yahan lagana)
-  paymentLink: "#", // e.g. https://rzp.io/l/your-link
-  upiId: "yourname@okaxis",
+  // Payment ab Razorpay API routes se hota hai (src/app/api/*).
+  // Keys .env / Cloudflare secrets me daalo: RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET
 };

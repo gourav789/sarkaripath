@@ -59,6 +59,7 @@ export default function PremiumPage() {
 
             <div className="mt-6">
               <BuyButton
+                planId={plan.id}
                 planName={plan.name}
                 amount={plan.price}
                 className={
@@ -76,8 +77,8 @@ export default function PremiumPage() {
       <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-slate-200 bg-white p-6">
         <h3 className="font-bold text-slate-900">Payment kaise hoga?</h3>
         <ul className="mt-3 space-y-2 text-sm text-slate-600">
-          <li>• Secure UPI ya Razorpay se payment.</li>
-          <li>• Payment ke baad download link turant milega.</li>
+          <li>• Secure Razorpay checkout — UPI, card, netbanking sab supported.</li>
+          <li>• Payment server-side verify hota hai, phir access unlock hota hai.</li>
           <li>
             • Koi dikkat ho to{" "}
             <a href={`mailto:${site.supportEmail}`} className="text-brand-600 hover:underline">

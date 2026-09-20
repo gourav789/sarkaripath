@@ -1,0 +1,17 @@
+{
+  "name": "sarkaripath",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-09-20",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+  // Razorpay keys ko secrets ki tarah set karo (wrangler secret put), NOT yahan:
+  //   npx wrangler secret put RAZORPAY_KEY_ID
+  //   npx wrangler secret put RAZORPAY_KEY_SECRET
+  // Cloudflare dashboard se bhi daal sakte ho: Workers & Pages > project > Settings > Variables
+}
