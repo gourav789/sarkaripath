@@ -141,20 +141,25 @@ export default async function ExamDetailPage({ params }) {
               </span>
             </Link>
 
-            <div className="flex items-center justify-between rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-5">
+            <Link
+              href="/exams/ssc-cgl/non-verbal-reasoning"
+              className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-600/5"
+            >
               <div className="flex items-center gap-4">
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-slate-100 text-2xl">
-                  ➕
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-2xl">
+                  🧩
                 </span>
                 <div>
-                  <h3 className="font-bold text-slate-500">Aur sets aa rahe hain</h3>
-                  <p className="text-sm text-slate-400">Quant, English, GA — jaldi</p>
+                  <h3 className="font-bold text-slate-900 group-hover:text-brand-600">
+                    Non-Verbal Reasoning
+                  </h3>
+                  <p className="text-sm text-slate-500">80 questions + figures + answer key</p>
                 </div>
               </div>
-              <span className="rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-500">
-                Soon
+              <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-600">
+                Free
               </span>
-            </div>
+            </Link>
           </div>
         </section>
       )}
