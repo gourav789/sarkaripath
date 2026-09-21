@@ -220,6 +220,33 @@ export default async function ExamDetailPage({ params }) {
                 Free
               </span>
             </Link>
+
+            {[
+              { href: "/exams/ssc-cgl/polity", icon: "⚖️", title: "Polity (GK)", count: "100 questions + answer key" },
+              { href: "/exams/ssc-cgl/geography", icon: "🌍", title: "Geography (GK)", count: "100 questions + answer key" },
+              { href: "/exams/ssc-cgl/general-science", icon: "🔬", title: "General Science (GK)", count: "100 questions + answer key" },
+              { href: "/exams/ssc-cgl/economics", icon: "📈", title: "Economics (GK)", count: "100 questions + answer key" },
+              { href: "/exams/ssc-cgl/art-culture", icon: "🎭", title: "Art & Culture (GK)", count: "100 questions + answer key" },
+            ].map((c) => (
+              <Link
+                key={c.href}
+                href={c.href}
+                className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-600/5"
+              >
+                <div className="flex items-center gap-4">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-2xl">
+                    {c.icon}
+                  </span>
+                  <div>
+                    <h3 className="font-bold text-slate-900 group-hover:text-brand-600">{c.title}</h3>
+                    <p className="text-sm text-slate-500">{c.count}</p>
+                  </div>
+                </div>
+                <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-600">
+                  Free
+                </span>
+              </Link>
+            ))}
           </div>
         </section>
       )}
