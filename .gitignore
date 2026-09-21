@@ -12,6 +12,12 @@
 .wrangler/
 cloudflare-env.d.ts
 
+# reference material (do not commit large PDFs)
+/ssc-cgl-reasoning.pdf/
+*.pdf
+reference_*.py
+reference_*.txt
+
 # production
 /build
 

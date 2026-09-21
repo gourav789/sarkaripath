@@ -97,12 +97,17 @@ export default function QuestionBank({ meta, sections }) {
                   key={item.no}
                   className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
                 >
-                  <p className="font-medium text-slate-900">
-                    <span className="mr-2 inline-grid h-6 w-6 place-items-center rounded-md bg-brand-50 text-xs font-bold text-brand-700">
+                  <div className="flex gap-2">
+                    <span className="mt-0.5 inline-grid h-6 w-6 flex-shrink-0 place-items-center rounded-md bg-brand-50 text-xs font-bold text-brand-700">
                       {item.no}
                     </span>
-                    {item.q}
-                  </p>
+                    <div>
+                      <p className="font-medium text-slate-900">{item.q}</p>
+                      {item.hi && (
+                        <p className="mt-1 text-sm text-slate-500">{item.hi}</p>
+                      )}
+                    </div>
+                  </div>
                   <div className="mt-3 grid gap-2 sm:grid-cols-2">
                     {item.options.map((opt, i) => {
                       const isCorrect = showAnswers && i === item.answer;
