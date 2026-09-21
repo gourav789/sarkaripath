@@ -111,6 +111,52 @@ export default function ExamDetailPage({ params }) {
         </div>
       </section>
 
+      {/* Practice section (abhi sirf SSC CGL ke liye available) */}
+      {exam.slug === "ssc-cgl" && (
+        <section className="mt-12">
+          <h2 className="text-2xl font-bold text-slate-900">Practice Questions</h2>
+          <p className="mt-1 text-slate-500">
+            Exam-level practice sets. Free me try karo, apni tayyari parkho.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <Link
+              href="/exams/ssc-cgl/verbal-reasoning"
+              className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-600/5"
+            >
+              <div className="flex items-center gap-4">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-2xl">
+                  🧠
+                </span>
+                <div>
+                  <h3 className="font-bold text-slate-900 group-hover:text-brand-600">
+                    Verbal Reasoning
+                  </h3>
+                  <p className="text-sm text-slate-500">200 questions + answer key</p>
+                </div>
+              </div>
+              <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-600">
+                Free
+              </span>
+            </Link>
+
+            <div className="flex items-center justify-between rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-5">
+              <div className="flex items-center gap-4">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-slate-100 text-2xl">
+                  ➕
+                </span>
+                <div>
+                  <h3 className="font-bold text-slate-500">Aur sets aa rahe hain</h3>
+                  <p className="text-sm text-slate-400">Quant, English, GA — jaldi</p>
+                </div>
+              </div>
+              <span className="rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-500">
+                Soon
+              </span>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Detailed syllabus (free + premium) */}
       {syllabus ? (
         <section className="mt-12">
