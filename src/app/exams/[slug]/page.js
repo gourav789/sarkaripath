@@ -8,8 +8,9 @@ export function generateStaticParams() {
   return exams.map((e) => ({ slug: e.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const exam = getExam(params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const exam = getExam(slug);
   if (!exam) return { title: "Exam not found" };
   return {
     title: `${exam.name} Syllabus & Pattern — SarkariPath`,
@@ -17,8 +18,9 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ExamDetailPage({ params }) {
-  const exam = getExam(params.slug);
+export default async function ExamDetailPage({ params }) {
+  const { slug } = await params;
+  const exam = getExam(slug);
   if (!exam) notFound();
 
   const category = getCategory(exam.category);

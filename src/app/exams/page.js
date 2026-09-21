@@ -7,8 +7,9 @@ export const metadata = {
   description: "SSC, Railway, Banking aur sabhi government exams ki list, syllabus aur mock tests.",
 };
 
-export default function ExamsPage({ searchParams }) {
-  const activeCategory = searchParams?.category || "all";
+export default async function ExamsPage({ searchParams }) {
+  const sp = await searchParams;
+  const activeCategory = sp?.category || "all";
   const filtered =
     activeCategory === "all"
       ? exams
