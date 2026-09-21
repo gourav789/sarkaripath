@@ -213,7 +213,7 @@ export default async function ExamDetailPage({ params }) {
                   <h3 className="font-bold text-slate-900 group-hover:text-brand-600">
                     History (GK)
                   </h3>
-                  <p className="text-sm text-slate-500">200+ questions + answer key</p>
+                  <p className="text-sm text-slate-500">350 questions + answer key</p>
                 </div>
               </div>
               <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-600">
