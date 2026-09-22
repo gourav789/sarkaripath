@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: `${site.name} — ${site.tagline}`,
   description:
@@ -32,4 +34,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
