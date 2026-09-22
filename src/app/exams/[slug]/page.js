@@ -256,7 +256,7 @@ export default async function ExamDetailPage({ params }) {
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-slate-900">Detailed Syllabus</h2>
           <p className="mt-1 text-slate-500">
-            Free topics abhi dekho. Poora syllabus + notes + mock premium me.
+            Poora topic-wise syllabus — sabhi topics free me available.
           </p>
 
           <div className="mt-6 space-y-6">
@@ -280,28 +280,22 @@ export default async function ExamDetailPage({ params }) {
                   ))}
                 </div>
 
-                {/* Premium locked */}
-                <div className="mt-4 rounded-xl border border-dashed border-accent-500/40 bg-accent-500/5 p-4">
+                {/* More topics (unlocked) */}
+                <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
                   <div className="flex items-center gap-2">
-                    <span className="text-lg">🔒</span>
+                    <span className="text-lg">📚</span>
                     <span className="font-semibold text-slate-800">
-                      Premium topics ({subject.premiumTopics.length})
+                      More topics ({subject.premiumTopics.length})
                     </span>
                   </div>
-                  <ul className="mt-2 grid gap-1 text-sm text-slate-500 sm:grid-cols-2">
+                  <ul className="mt-2 grid gap-1 text-sm text-slate-600 sm:grid-cols-2">
                     {subject.premiumTopics.map((p) => (
                       <li key={p} className="flex items-center gap-2">
-                        <span className="text-accent-500">•</span>
-                        <span className="blur-[2px] select-none">{p}</span>
+                        <span className="text-brand-500">•</span>
+                        <span>{p}</span>
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href="/premium"
-                    className="mt-3 inline-block rounded-lg bg-accent-500 px-4 py-2 text-sm font-semibold text-white hover:bg-accent-600"
-                  >
-                    Unlock all topics →
-                  </Link>
                 </div>
               </div>
             ))}
