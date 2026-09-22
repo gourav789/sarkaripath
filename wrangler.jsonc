@@ -9,9 +9,8 @@
   },
   "observability": {
     "enabled": true
+  },
+  "vars": {
+    "AUTH_URL": "https://sarkaripath.gourav8101.workers.dev"
   }
-  // Razorpay keys ko secrets ki tarah set karo (wrangler secret put), NOT yahan:
-  //   npx wrangler secret put RAZORPAY_KEY_ID
-  //   npx wrangler secret put RAZORPAY_KEY_SECRET
-  // Cloudflare dashboard se bhi daal sakte ho: Workers & Pages > project > Settings > Variables
 }
