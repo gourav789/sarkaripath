@@ -1,23 +1,11 @@
 "use client";
 
-// Google Sign-In button.
-// Abhi ye placeholder alert dikhata hai. NextAuth setup ke baad, neeche di gayi
-// signIn("google") wali line uncomment kar do (README me poora tarika hai).
-
-// import { signIn } from "next-auth/react";
+import { signIn } from "next-auth/react";
 
 export default function GoogleSignInButton({ compact = false }) {
-  function handleClick() {
-    // NextAuth enable hone ke baad ye line use karo:
-    // signIn("google");
-    alert(
-      "Google Sign-In yahan connect hoga.\n\nNextAuth + Google credentials add karne ke baad ye button real login karega. Steps README me diye hain."
-    );
-  }
-
   return (
     <button
-      onClick={handleClick}
+      onClick={() => signIn("google")}
       className={
         "inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 " +
         (compact ? "px-3 py-2 text-sm" : "w-full px-4 py-3 text-base")
