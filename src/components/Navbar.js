@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { useAuth } from "./AuthProvider";
-import GoogleSignInButton from "./GoogleSignInButton";
 import SignOutButton from "./SignOutButton";
 
 export default function Navbar() {
@@ -44,7 +43,12 @@ export default function Navbar() {
               <SignOutButton />
             </div>
           ) : (
-            <GoogleSignInButton compact />
+            <Link
+              href="/signin"
+              className="rounded-lg bg-brand-600 px-3.5 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700"
+            >
+              Sign in
+            </Link>
           )}
         </div>
       </nav>
