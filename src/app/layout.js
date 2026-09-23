@@ -2,7 +2,6 @@ import "./globals.css";
 import { site } from "@/lib/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Providers from "@/components/Providers";
 
 export const dynamic = "force-dynamic";
 
@@ -25,11 +24,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Providers>
-          <Navbar />
-          <main className="min-h-[70vh]">{children}</main>
-          <Footer />
-        </Providers>
+        <Navbar />
+        <main className="min-h-[70vh]">{children}</main>
+        <Footer />
       </body>
     </html>
   );

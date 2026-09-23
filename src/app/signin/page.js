@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
-import GoogleSignInButton from "@/components/GoogleSignInButton";
 
 export const metadata = {
   title: "Sign In — SarkariPath",
@@ -24,7 +23,13 @@ export default function SignInPage() {
         </div>
 
         <div className="mt-8">
-          <GoogleSignInButton />
+          <button
+            type="button"
+            disabled
+            className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm opacity-60 cursor-not-allowed"
+          >
+            Sign in with Google
+          </button>
         </div>
 
         <p className="mt-6 text-center text-xs text-slate-400">

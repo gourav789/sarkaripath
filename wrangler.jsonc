@@ -9,8 +9,5 @@
   },
   "observability": {
     "enabled": true
-  },
-  "vars": {
-    "AUTH_URL": "https://sarkaripath.gourav8101.workers.dev"
   }
 }
