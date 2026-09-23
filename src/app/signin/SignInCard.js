@@ -439,11 +439,11 @@ export default function SignInCard() {
 
       <p className="mt-6 text-center text-xs text-slate-400">
         Sign in karke aap hamari{" "}
-        <Link href="/" className="text-brand-600 hover:underline">
-          Terms
+        <Link href="/terms" className="text-brand-600 hover:underline">
+          Terms &amp; Conditions
         </Link>{" "}
         aur{" "}
-        <Link href="/" className="text-brand-600 hover:underline">
+        <Link href="/privacy" className="text-brand-600 hover:underline">
           Privacy Policy
         </Link>{" "}
         se sahmat hote hain.
