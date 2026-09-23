@@ -59,10 +59,10 @@ export default async function ExamDetailPage({ params }) {
           </div>
         </div>
         <Link
-          href="/premium"
+          href="/pricing"
           className="rounded-lg bg-accent-500 px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-accent-600"
         >
-          Unlock Premium →
+          View Plans &amp; Pricing →
         </Link>
       </div>
 

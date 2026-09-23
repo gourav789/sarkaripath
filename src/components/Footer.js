@@ -14,7 +14,7 @@ export default function Footer() {
             <span className="font-bold text-slate-900">{site.name}</span>
           </div>
           <p className="text-sm text-slate-500">
-            {site.tagline}. Affordable and comprehensive prep material for SSC CGL 2026 and government exams.
+            {site.tagline}. Affordable and comprehensive prep material for government exams (SSC, Banking, Railway, and more).
           </p>
           <div className="text-xs text-slate-400 space-y-1">
             <p>📍 Durgapur, West Bengal, India</p>
@@ -73,11 +73,11 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/pricing" className="hover:text-brand-600">
-                Pricing
+                Pricing & Plans
               </Link>
             </li>
             <li>
-              <Link href="/premium" className="hover:text-brand-600">
+              <Link href="/pricing" className="hover:text-brand-600">
                 Lifetime Access (₹299)
               </Link>
             </li>

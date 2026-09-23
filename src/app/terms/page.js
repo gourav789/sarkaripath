@@ -37,7 +37,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-base font-bold text-slate-900">2. Description of Service</h2>
             <p className="mt-2">
-              Sarkari Path provides online digital educational content, including bilingual practice questions, topic-wise assessments, syllabus breakdowns, and preparation materials for Indian competitive exams (such as SSC CGL 2026).
+              Sarkari Path provides online digital educational content, including bilingual practice questions, topic-wise assessments, syllabus breakdowns, and preparation materials for Indian competitive exams (including SSC, Banking, Railway, and other government examinations).
             </p>
             <p className="mt-2">
               All services provided are purely digital and delivered over the internet. <strong>We do not sell, ship, or deliver any physical textbooks, CDs, or printed materials.</strong>
@@ -47,7 +47,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-base font-bold text-slate-900">3. User Accounts and Registration</h2>
             <p className="mt-2">
-              To access practice tests and premium content, you may be required to register using your email or Google account. You agree to:
+              To access practice tests and full study modules, you may be required to register using your email or Google account. You agree to:
             </p>
             <ul className="mt-2 list-disc space-y-1 pl-5">
               <li>Provide accurate and complete information during registration.</li>
@@ -94,7 +94,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-base font-bold text-slate-900">7. Educational Disclaimer</h2>
             <p className="mt-2">
-              Sarkari Path is an independent educational preparatory platform and is <strong>NOT affiliated with, endorsed by, or associated with the Staff Selection Commission (SSC), the Government of India, or any state examination authority</strong>.
+              Sarkari Path is an independent educational preparatory platform and is <strong>NOT affiliated with, endorsed by, or associated with the Staff Selection Commission (SSC), the Railway Recruitment Board (RRB), the Institute of Banking Personnel Selection (IBPS), the Government of India, or any state examination authority</strong>.
             </p>
             <p className="mt-2">
               While we strive to provide high-quality and up-to-date practice material, we do not guarantee exam selection, specific ranks, scores, or employment outcomes. Success in competitive exams depends on individual effort and official examination standards.

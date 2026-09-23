@@ -9,7 +9,7 @@ Ek Next.js website jahan sabhi government exams (SSC CGL, Railways, IBPS, aur zy
 - **Homepage** — hero, popular exams, categories, features, testimonials
 - **All Exams** (`/exams`) — category filter ke saath
 - **Exam detail** (`/exams/[slug]`) — pattern table + detailed syllabus (free topics visible, premium topics locked)
-- **Premium** (`/premium`) — pricing plans + **Razorpay checkout**
+- **Pricing** (`/pricing`) — Lifetime access plan + **Razorpay checkout**
 - **Sign In** (`/signin`) — Google sign-in button (NextAuth-ready)
 - **API routes** — `/api/create-order` aur `/api/verify-payment` (Razorpay, server-side signature verification)
 

@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { exams } from "@/lib/exams";
+import BuyButton from "@/components/BuyButton";
 
 export const metadata = {
   title: "Pricing & Plans — Sarkari Path",
   description:
-    "Transparent pricing for Sarkari Path: Get one-time lifetime access to SSC CGL 2026 practice questions and study material for ₹299.",
+    "Transparent pricing for Sarkari Path: Get one-time lifetime access to all government exam practice questions and study material for ₹299.",
 };
 
 export default function PricingPage() {
@@ -27,7 +29,7 @@ export default function PricingPage() {
         {/* Pricing Card */}
         <div className="mt-10 overflow-hidden rounded-3xl border-2 border-brand-500 bg-white shadow-lg">
           <div className="bg-brand-600 px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-white">
-            Most Popular — Lifetime Value
+            Most Popular — Lifetime All-Access
           </div>
 
           <div className="p-8 sm:p-10">
@@ -37,7 +39,7 @@ export default function PricingPage() {
                   Lifetime Access Plan
                 </h2>
                 <p className="mt-1 text-sm text-slate-500">
-                  Full online preparation & practice suite for SSC CGL 2026
+                  Covers all exams on Sarkari Path — current and future (SSC, Banking, Railway, and more)
                 </p>
               </div>
 
@@ -73,29 +75,90 @@ export default function PricingPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-brand-600">✓</span>
-                <span>GK Capsules, History, Polity & Science modules</span>
+                <span>GK Capsules, History, Polity, Geography & Science modules</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-brand-600">✓</span>
-                <span>All future practice sets and updates included</span>
+                <span>All future exams & practice sets included at no extra cost</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-brand-600">✓</span>
-                <span>Instant digital access on mobile, tablet, and desktop</span>
+                <span>Instant digital access on mobile, tablet, and PC</span>
               </li>
             </ul>
 
             <div className="mt-8 flex flex-col items-center gap-4">
-              <Link
-                href="/premium"
-                className="w-full rounded-xl bg-brand-600 py-3.5 text-center text-base font-bold text-white shadow-md transition hover:bg-brand-700 sm:w-auto sm:px-12"
-              >
-                Get Lifetime Access for ₹299
-              </Link>
+              <div className="w-full sm:w-auto">
+                <BuyButton
+                  planId="premium"
+                  planName="Lifetime All-Access"
+                  amount={299}
+                  className="bg-brand-600 text-white hover:bg-brand-700 shadow-md text-base font-bold py-3.5 px-8"
+                />
+              </div>
               <p className="text-xs text-slate-400">
                 🔒 100% Secure Checkout powered by Razorpay
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Exams Covered Section */}
+        <div className="mt-14">
+          <div className="text-center">
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-600">
+              Multi-Exam Platform
+            </span>
+            <h2 className="mt-1 text-2xl font-bold text-slate-900">
+              Exams Covered
+            </h2>
+            <p className="mt-1 text-sm text-slate-500">
+              One purchase unlocks all current content and all future exam releases.
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {exams.map((exam) => {
+              const isAvailable = exam.slug === "ssc-cgl";
+              return isAvailable ? (
+                <Link
+                  key={exam.slug}
+                  href={`/exams/${exam.slug}`}
+                  className="flex items-center justify-between rounded-2xl border border-emerald-200 bg-white p-4 shadow-sm transition hover:border-emerald-400 hover:shadow-md"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{exam.icon}</span>
+                    <div>
+                      <h3 className="font-bold text-slate-900">{exam.name}</h3>
+                      <p className="text-xs text-slate-500">{exam.fullName}</p>
+                    </div>
+                  </div>
+                  <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-800">
+                    Available
+                  </span>
+                </Link>
+              ) : (
+                <div
+                  key={exam.slug}
+                  className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50/70 p-4 opacity-75"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl grayscale">{exam.icon}</span>
+                    <div>
+                      <h3 className="font-semibold text-slate-700">{exam.name}</h3>
+                      <p className="text-xs text-slate-400">{exam.fullName}</p>
+                    </div>
+                  </div>
+                  <span className="rounded-full bg-slate-200 px-3 py-1 text-xs font-medium text-slate-600">
+                    Coming Soon
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 rounded-xl border border-brand-100 bg-brand-50/60 p-4 text-center text-xs text-brand-900">
+            💡 <strong>Note:</strong> New exams are added regularly. Buy once, unlock everything — including exams we launch later, at no extra cost.
           </div>
         </div>
 
@@ -114,7 +177,7 @@ export default function PricingPage() {
                 <strong>Accepted Payment Methods:</strong> UPI (Google Pay, PhonePe, Paytm, BHIM), Debit/Credit Cards (Visa, MasterCard, RuPay), Netbanking, and Wallets.
               </li>
               <li>
-                <strong>Instant Electronic Delivery:</strong> Upon successful checkout, access to all premium modules is activated immediately on your registered account.
+                <strong>Instant Electronic Delivery:</strong> Upon successful checkout, access to all practice modules is activated immediately on your registered account.
               </li>
             </ul>
           </div>

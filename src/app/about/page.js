@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 export const metadata = {
   title: "About Us — Sarkari Path",
   description:
-    "Learn about Sarkari Path, our mission to provide affordable and comprehensive exam preparation material for SSC CGL and government exams.",
+    "Learn about Sarkari Path, our mission to provide affordable and comprehensive exam preparation material for government exams (SSC, Banking, Railway, and more).",
 };
 
 export default function AboutPage() {
@@ -29,7 +29,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-xl font-bold text-slate-900">Who We Are</h2>
             <p className="mt-3">
-              <strong>Sarkari Path</strong> is an online educational platform designed to empower candidates preparing for government competitive examinations in India, with a primary focus on <strong>SSC CGL 2026</strong>. Operating from <strong>Durgapur, West Bengal, India</strong>, we are committed to making top-tier exam preparation accessible, streamlined, and affordable for every aspirant.
+              <strong>Sarkari Path</strong> is an online educational platform designed to empower candidates preparing for government competitive examinations in India, covering <strong>SSC, Banking, Railway, and other premier exams</strong>. Operating from <strong>Durgapur, West Bengal, India</strong>, we are committed to making top-tier exam preparation accessible, streamlined, and affordable for every aspirant.
             </p>
           </section>
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-xl font-bold text-slate-900">Who It Is For</h2>
             <p className="mt-3">
-              Our platform is tailored for serious aspirants targeting <strong>SSC CGL (Tier 1 & Tier 2)</strong>, as well as candidates preparing for RRB NTPC, Group D, IBPS, and State PSC examinations who require structured revision and subject-wise testing.
+              Our platform is tailored for serious aspirants targeting <strong>SSC (CGL, CHSL, MTS), Banking (IBPS PO/Clerk, SBI PO), Railway (RRB NTPC, Group D)</strong>, and State PSC examinations who require structured revision and subject-wise testing.
             </p>
           </section>
 

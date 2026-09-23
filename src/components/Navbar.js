@@ -27,8 +27,8 @@ export default function Navbar() {
           <Link href="/#categories" className="text-sm font-medium text-slate-600 hover:text-brand-600">
             Categories
           </Link>
-          <Link href="/premium" className="text-sm font-medium text-slate-600 hover:text-brand-600">
-            Premium
+          <Link href="/pricing" className="text-sm font-medium text-slate-600 hover:text-brand-600">
+            Pricing
           </Link>
         </div>
 

@@ -58,10 +58,10 @@ export default function HomePage() {
                 <span className="ml-1 inline-block transition group-hover:translate-x-1">→</span>
               </Link>
               <Link
-                href="/premium"
+                href="/pricing"
                 className="rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50"
               >
-                View Premium Plans
+                View Pricing
               </Link>
             </div>
 
@@ -76,16 +76,33 @@ export default function HomePage() {
         <div className="relative border-t border-slate-200/70 bg-white/70 py-4 backdrop-blur">
           <div className="flex overflow-hidden">
             <div className="animate-marquee flex shrink-0 items-center gap-3 pr-3">
-              {[...trending, ...trending].map((exam, i) => (
-                <Link
-                  key={exam.slug + i}
-                  href={`/exams/${exam.slug}`}
-                  className="flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-medium text-slate-600 transition hover:border-brand-300 hover:text-brand-600"
-                >
-                  <span>{exam.icon}</span>
-                  {exam.name}
-                </Link>
-              ))}
+              {[...trending, ...trending].map((exam, i) => {
+                const isAvailable = exam.slug === "ssc-cgl";
+                return isAvailable ? (
+                  <Link
+                    key={exam.slug + i}
+                    href={`/exams/${exam.slug}`}
+                    className="flex shrink-0 items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-sm font-medium text-slate-700 transition hover:border-emerald-300 hover:text-emerald-700"
+                  >
+                    <span>{exam.icon}</span>
+                    <span>{exam.name}</span>
+                    <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[10px] font-bold text-emerald-600">
+                      Live
+                    </span>
+                  </Link>
+                ) : (
+                  <span
+                    key={exam.slug + i}
+                    className="flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-1.5 text-sm font-medium text-slate-500 opacity-80"
+                  >
+                    <span className="grayscale">{exam.icon}</span>
+                    <span>{exam.name}</span>
+                    <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-400">
+                      Soon
+                    </span>
+                  </span>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -320,10 +337,10 @@ export default function HomePage() {
               Browse Exams
             </Link>
             <Link
-              href="/premium"
+              href="/pricing"
               className="rounded-xl border border-white/40 px-7 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
             >
-              Go Premium
+              View Pricing
             </Link>
           </div>
         </div>
