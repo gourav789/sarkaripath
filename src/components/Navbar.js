@@ -1,7 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { useAuth } from "./AuthProvider";
+import GoogleSignInButton from "./GoogleSignInButton";
+import SignOutButton from "./SignOutButton";
 
 export default function Navbar() {
+  const { user, loading } = useAuth();
+
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
       <nav className="container-page flex h-16 items-center justify-between">
@@ -27,12 +34,18 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link
-            href="/signin"
-            className="rounded-lg bg-brand-600 px-3.5 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700"
-          >
-            Sign in
-          </Link>
+          {loading ? (
+            <div className="h-8 w-16" />
+          ) : user ? (
+            <div className="flex items-center gap-3">
+              <span className="hidden text-sm font-medium text-slate-700 sm:inline-block">
+                {user.displayName || user.email}
+              </span>
+              <SignOutButton />
+            </div>
+          ) : (
+            <GoogleSignInButton compact />
+          )}
         </div>
       </nav>
     </header>

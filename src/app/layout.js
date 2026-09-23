@@ -2,6 +2,7 @@ import "./globals.css";
 import { site } from "@/lib/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { AuthProvider } from "@/components/AuthProvider";
 
 export const dynamic = "force-dynamic";
 
@@ -24,9 +25,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main className="min-h-[70vh]">{children}</main>
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          <main className="min-h-[70vh]">{children}</main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
