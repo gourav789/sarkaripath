@@ -9,4 +9,6 @@ export const site = {
   // Social / contact
   telegram: "https://t.me/your_channel",
   whatsappChannel: "https://whatsapp.com/channel/0029Vb8LLDi5fM5jXw3FdY3j",
+  facebook: "https://www.facebook.com/sarkaripath.onl",
+  instagram: "https://www.instagram.com/sarkaripath.onl/",
 };
