@@ -19,6 +19,12 @@ cloudflare-env.d.ts
 reference_*.py
 reference_*.txt
 
+# ...but DO commit the public current-affairs PDFs (served to users)
+!public/current-affairs/*.pdf
+
+# internal source PDFs for current affairs (raw copies — not needed in repo)
+/Current Affairs/
+
 # production
 /build
 

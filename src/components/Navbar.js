@@ -24,6 +24,9 @@ export default function Navbar() {
           <Link href="/exams" className="text-sm font-medium text-slate-600 hover:text-brand-600">
             All Exams
           </Link>
+          <Link href="/current-affairs" className="text-sm font-medium text-slate-600 hover:text-brand-600">
+            Current Affairs
+          </Link>
           <Link href="/#categories" className="text-sm font-medium text-slate-600 hover:text-brand-600">
             Categories
           </Link>

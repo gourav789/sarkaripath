@@ -56,6 +56,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/current-affairs" className="hover:text-brand-600">
+                Current Affairs (Free)
+              </Link>
+            </li>
+            <li>
               <Link href="/exams" className="hover:text-brand-600 font-medium text-brand-600">
                 All Subjects &rarr;
               </Link>
