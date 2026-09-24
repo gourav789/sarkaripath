@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { site } from "@/lib/site";
 import { useAuth } from "./AuthProvider";
+import { fbqTrack } from "@/lib/fbpixel";
 
 // Razorpay Checkout script ko ek baar load karo
 function loadRazorpayScript() {
@@ -35,6 +36,14 @@ export default function BuyButton({ planId, planName, amount, className = "" }) 
 
       setStatus("loading");
       setMessage("");
+
+      // Meta Pixel — user ne checkout shuru kiya
+      fbqTrack("InitiateCheckout", {
+        content_name: planName,
+        content_category: "subscription",
+        value: amount,
+        currency: "INR",
+      });
 
       // 2. Razorpay script load karo
       const ok = await loadRazorpayScript();
@@ -92,6 +101,14 @@ export default function BuyButton({ planId, planName, amount, className = "" }) 
             const verify = await verifyRes.json();
 
             if (verifyRes.ok && verify.verified) {
+              // Meta Pixel — successful purchase (sabse important conversion event)
+              fbqTrack("Purchase", {
+                content_name: planName,
+                content_category: "subscription",
+                value: amount,
+                currency: "INR",
+              });
+
               await refreshPaidStatus();
               setStatus("success");
               setMessage("Payment successful! Lifetime access unlock ho gaya.");

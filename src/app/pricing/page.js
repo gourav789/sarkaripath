@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import { exams } from "@/lib/exams";
 import { PLAN_PRICE_RUPEES } from "@/lib/plans";
 import BuyButton from "@/components/BuyButton";
+import PixelViewContent from "@/components/PixelViewContent";
 
 export const metadata = {
   title: "Pricing & Plans — Sarkari Path",
@@ -92,6 +93,8 @@ const FUTURE_BENEFITS = [
 export default function PricingPage() {
   return (
     <div className="container-page py-12 md:py-16">
+      {/* Meta Pixel — pricing page dekha */}
+      <PixelViewContent contentName="Lifetime All-Access" value={PLAN_PRICE_RUPEES} />
       <div className="mx-auto max-w-3xl">
         {/* Header */}
         <div className="border-b border-slate-200 pb-6 text-center">
