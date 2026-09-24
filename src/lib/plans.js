@@ -1,5 +1,4 @@
-// TEMP TEST PRICE — change back to 299 after testing
-export const PLAN_PRICE_RUPEES = 1;
+export const PLAN_PRICE_RUPEES = 299;
 export const PLAN_PRICE_PAISE = PLAN_PRICE_RUPEES * 100;
 
 // Pricing plans. Yahan se price/features aasaani se badal sakte ho.
