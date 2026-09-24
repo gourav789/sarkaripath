@@ -1,5 +1,6 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
+import LockGate from "@/components/LockGate";
 import { historyMeta, historySections } from "@/lib/history";
 
 export const metadata = {
@@ -19,7 +20,9 @@ export default function HistoryPage() {
       </div>
 
       <div className="mt-6">
-        <QuestionBank meta={historyMeta} sections={historySections} />
+        <LockGate>
+          <QuestionBank meta={historyMeta} sections={historySections} />
+        </LockGate>
       </div>
 
       <div className="mt-10 text-center">

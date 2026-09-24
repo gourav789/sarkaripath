@@ -118,7 +118,7 @@ export default async function ExamDetailPage({ params }) {
         <section className="mt-12">
           <h2 className="text-2xl font-bold text-slate-900">Practice Questions</h2>
           <p className="mt-1 text-slate-500">
-            Exam-level practice sets. Free me try karo, apni tayyari parkho.
+            Exam-level practice sets. Practice questions with complete bilingual explanations &amp; answer keys.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <Link
@@ -136,8 +136,8 @@ export default async function ExamDetailPage({ params }) {
                   <p className="text-sm text-slate-500">200 questions + answer key</p>
                 </div>
               </div>
-              <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-600">
-                Free
+              <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                Practice Now →
               </span>
             </Link>
 
@@ -156,8 +156,8 @@ export default async function ExamDetailPage({ params }) {
                   <p className="text-sm text-slate-500">80 questions + figures + answer key</p>
                 </div>
               </div>
-              <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-600">
-                Free
+              <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                Practice Now →
               </span>
             </Link>
 
@@ -176,8 +176,8 @@ export default async function ExamDetailPage({ params }) {
                   <p className="text-sm text-slate-500">200 questions + answer key</p>
                 </div>
               </div>
-              <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-600">
-                Free
+              <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                Practice Now →
               </span>
             </Link>
 
@@ -196,8 +196,8 @@ export default async function ExamDetailPage({ params }) {
                   <p className="text-sm text-slate-500">200 questions + answer key</p>
                 </div>
               </div>
-              <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-600">
-                Free
+              <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                Practice Now →
               </span>
             </Link>
 
@@ -216,8 +216,8 @@ export default async function ExamDetailPage({ params }) {
                   <p className="text-sm text-slate-500">350 questions + answer key</p>
                 </div>
               </div>
-              <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-600">
-                Free
+              <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                Practice Now →
               </span>
             </Link>
 
@@ -242,8 +242,8 @@ export default async function ExamDetailPage({ params }) {
                     <p className="text-sm text-slate-500">{c.count}</p>
                   </div>
                 </div>
-                <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-600">
-                  Free
+                <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                  Practice Now →
                 </span>
               </Link>
             ))}

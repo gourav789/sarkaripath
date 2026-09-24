@@ -1,5 +1,6 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
+import LockGate from "@/components/LockGate";
 import { quantMeta, quantSections } from "@/lib/quant";
 
 export const metadata = {
@@ -19,7 +20,9 @@ export default function QuantitativeAptitudePage() {
       </div>
 
       <div className="mt-6">
-        <QuestionBank meta={quantMeta} sections={quantSections} />
+        <LockGate>
+          <QuestionBank meta={quantMeta} sections={quantSections} />
+        </LockGate>
       </div>
 
       <div className="mt-10 text-center">

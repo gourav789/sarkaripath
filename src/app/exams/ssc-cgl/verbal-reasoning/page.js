@@ -1,5 +1,6 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
+import LockGate from "@/components/LockGate";
 import {
   verbalReasoningMeta,
   verbalReasoningSections,
@@ -27,10 +28,12 @@ export default function VerbalReasoningPage() {
       </div>
 
       <div className="mt-6">
-        <QuestionBank
-          meta={verbalReasoningMeta}
-          sections={verbalReasoningSections}
-        />
+        <LockGate>
+          <QuestionBank
+            meta={verbalReasoningMeta}
+            sections={verbalReasoningSections}
+          />
+        </LockGate>
       </div>
 
       <div className="mt-10 text-center">

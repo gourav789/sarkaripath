@@ -1,7 +1,14 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "@/lib/firebase";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+} from "react";
+import { auth, db } from "@/lib/firebase";
+import { doc, getDoc } from "firebase/firestore";
 import {
   onAuthStateChanged,
   signInWithPopup,
@@ -16,25 +23,65 @@ import {
 const AuthContext = createContext({
   user: null,
   loading: true,
+  paid: false,
   signInWithGoogle: async () => {},
   signUpWithEmail: async () => {},
   signInWithEmail: async () => {},
   resetPassword: async () => {},
   logout: async () => {},
+  refreshPaidStatus: async () => {},
 });
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [paid, setPaid] = useState(false);
+
+  const fetchPaidStatus = useCallback(async (currentUser) => {
+    if (!currentUser) {
+      setPaid(false);
+      return false;
+    }
+    try {
+      const docRef = doc(db, "users", currentUser.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const isPaid = !!docSnap.data()?.paid;
+        setPaid(isPaid);
+        return isPaid;
+      } else {
+        setPaid(false);
+        return false;
+      }
+    } catch (err) {
+      console.error("Error fetching user paid status:", err);
+      setPaid(false);
+      return false;
+    }
+  }, []);
+
+  const refreshPaidStatus = useCallback(async () => {
+    const targetUser = auth.currentUser || user;
+    if (targetUser) {
+      return await fetchPaidStatus(targetUser);
+    }
+    setPaid(false);
+    return false;
+  }, [fetchPaidStatus, user]);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
+      if (currentUser) {
+        await fetchPaidStatus(currentUser);
+      } else {
+        setPaid(false);
+      }
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [fetchPaidStatus]);
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
@@ -73,11 +120,13 @@ export function AuthProvider({ children }) {
       value={{
         user,
         loading,
+        paid,
         signInWithGoogle,
         signUpWithEmail,
         signInWithEmail,
         resetPassword,
         logout,
+        refreshPaidStatus,
       }}
     >
       {children}

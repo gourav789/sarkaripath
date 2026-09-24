@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { site } from "@/lib/site";
 import { useAuth } from "@/components/AuthProvider";
 import GoogleSignInButton from "@/components/GoogleSignInButton";
@@ -29,6 +30,9 @@ function getFriendlyErrorMessage(error) {
 }
 
 export default function SignInCard() {
+  const searchParams = useSearchParams();
+  const redirectUrl = searchParams?.get("redirect") || "/exams";
+
   const {
     user,
     loading,
@@ -182,10 +186,12 @@ export default function SignInCard() {
             </div>
             <div className="flex items-center justify-center gap-3">
               <Link
-                href="/exams"
+                href={redirectUrl}
                 className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700"
               >
-                Go to Exams
+                {redirectUrl.startsWith("/pricing")
+                  ? "Continue to Checkout →"
+                  : "Go to Exams"}
               </Link>
               <SignOutButton />
             </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
+import LockGate from "@/components/LockGate";
 import { englishMeta, englishSections } from "@/lib/english";
 
 export const metadata = {
@@ -19,7 +20,9 @@ export default function EnglishComprehensionPage() {
       </div>
 
       <div className="mt-6">
-        <QuestionBank meta={englishMeta} sections={englishSections} />
+        <LockGate>
+          <QuestionBank meta={englishMeta} sections={englishSections} />
+        </LockGate>
       </div>
 
       <div className="mt-10 text-center">

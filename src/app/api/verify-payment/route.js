@@ -1,3 +1,5 @@
+import { getAdminAuth, getAdminDb } from "@/lib/firebase-admin";
+
 export const runtime = "nodejs";
 
 // HMAC-SHA256 signature verify — Web Crypto se (portable, Node + edge dono pe chalta hai).
@@ -28,6 +30,18 @@ function safeEqual(a, b) {
 
 export async function POST(request) {
   try {
+    const authHeader = request.headers.get("authorization") || "";
+    const idToken = authHeader.startsWith("Bearer ")
+      ? authHeader.substring(7)
+      : null;
+
+    if (!idToken) {
+      return Response.json(
+        { verified: false, error: "Unauthorized: Missing auth token" },
+        { status: 401 }
+      );
+    }
+
     const {
       razorpay_order_id,
       razorpay_payment_id,
@@ -35,7 +49,10 @@ export async function POST(request) {
     } = await request.json();
 
     if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
-      return Response.json({ verified: false, error: "Missing fields" }, { status: 400 });
+      return Response.json(
+        { verified: false, error: "Missing fields" },
+        { status: 400 }
+      );
     }
 
     const keySecret = process.env.RAZORPAY_KEY_SECRET;
@@ -46,23 +63,56 @@ export async function POST(request) {
       );
     }
 
-    // Razorpay ka rule: signature = HMAC_SHA256(order_id + "|" + payment_id, key_secret)
+    // 1. Verify Razorpay HMAC-SHA256 signature
     const expected = await hmacSha256Hex(
       keySecret,
       `${razorpay_order_id}|${razorpay_payment_id}`
     );
 
     const verified = safeEqual(expected, razorpay_signature);
-
     if (!verified) {
-      return Response.json({ verified: false }, { status: 400 });
+      return Response.json(
+        { verified: false, error: "Invalid payment signature" },
+        { status: 400 }
+      );
     }
 
-    // Yahan aap unlock/order record kar sakte ho (DB/KV me).
-    // Abhi ke liye sirf verified: true return kar rahe hain.
-    return Response.json({ verified: true, paymentId: razorpay_payment_id });
+    // 2. Verify Firebase ID Token to get uid
+    let uid;
+    try {
+      const adminAuth = getAdminAuth();
+      const decodedToken = await adminAuth.verifyIdToken(idToken);
+      uid = decodedToken.uid;
+    } catch (authErr) {
+      console.error("Token verification failed:", authErr);
+      return Response.json(
+        { verified: false, error: "Invalid auth token" },
+        { status: 401 }
+      );
+    }
+
+    // 3. Write/merge paid status into Firestore users/{uid}
+    const adminDb = getAdminDb();
+    await adminDb.collection("users").doc(uid).set(
+      {
+        paid: true,
+        paidAt: new Date().toISOString(),
+        paymentId: razorpay_payment_id,
+      },
+      { merge: true }
+    );
+
+    return Response.json({
+      verified: true,
+      paymentId: razorpay_payment_id,
+      uid,
+    });
   } catch (err) {
     console.error("verify-payment error:", err);
-    return Response.json({ verified: false, error: "Verification failed" }, { status: 500 });
+    return Response.json(
+      { verified: false, error: "Verification failed" },
+      { status: 500 }
+    );
   }
 }
+

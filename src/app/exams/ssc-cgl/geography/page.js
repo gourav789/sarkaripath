@@ -1,5 +1,6 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
+import LockGate from "@/components/LockGate";
 import { geographyMeta, geographySections } from "@/lib/geography";
 
 export const metadata = {
@@ -16,7 +17,9 @@ export default function GeographyPage() {
         <span className="text-slate-700">Geography</span>
       </div>
       <div className="mt-6">
-        <QuestionBank meta={geographyMeta} sections={geographySections} />
+        <LockGate>
+          <QuestionBank meta={geographyMeta} sections={geographySections} />
+        </LockGate>
       </div>
       <div className="mt-10 text-center">
         <Link href="/exams/ssc-cgl" className="rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50">← Back to SSC CGL</Link>

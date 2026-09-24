@@ -6,7 +6,7 @@ import { useAuth } from "./AuthProvider";
 import SignOutButton from "./SignOutButton";
 
 export default function Navbar() {
-  const { user, loading } = useAuth();
+  const { user, loading, paid } = useAuth();
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -37,8 +37,13 @@ export default function Navbar() {
             <div className="h-8 w-16" />
           ) : user ? (
             <div className="flex items-center gap-3">
-              <span className="hidden text-sm font-medium text-slate-700 sm:inline-block">
-                {user.displayName || user.email}
+              <span className="hidden items-center gap-1.5 text-sm font-medium text-slate-700 sm:inline-flex">
+                <span>{user.displayName || user.email}</span>
+                {paid && (
+                  <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-extrabold text-amber-800">
+                    PRO
+                  </span>
+                )}
               </span>
               <SignOutButton />
             </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NonVerbalBank from "@/components/NonVerbalBank";
+import LockGate from "@/components/LockGate";
 import { nonVerbalMeta, nonVerbalSections } from "@/lib/reasoning-nonverbal";
 
 export const metadata = {
@@ -19,7 +20,9 @@ export default function NonVerbalReasoningPage() {
       </div>
 
       <div className="mt-6">
-        <NonVerbalBank meta={nonVerbalMeta} sections={nonVerbalSections} />
+        <LockGate>
+          <NonVerbalBank meta={nonVerbalMeta} sections={nonVerbalSections} />
+        </LockGate>
       </div>
 
       <div className="mt-10 text-center">

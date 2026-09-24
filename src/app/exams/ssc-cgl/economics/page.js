@@ -1,5 +1,6 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
+import LockGate from "@/components/LockGate";
 import { economicsMeta, economicsSections } from "@/lib/economics";
 
 export const metadata = {
@@ -16,7 +17,9 @@ export default function EconomicsPage() {
         <span className="text-slate-700">Economics</span>
       </div>
       <div className="mt-6">
-        <QuestionBank meta={economicsMeta} sections={economicsSections} />
+        <LockGate>
+          <QuestionBank meta={economicsMeta} sections={economicsSections} />
+        </LockGate>
       </div>
       <div className="mt-10 text-center">
         <Link href="/exams/ssc-cgl" className="rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50">← Back to SSC CGL</Link>
