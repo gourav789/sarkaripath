@@ -18,7 +18,6 @@ export default function Footer() {
             {site.tagline}. Affordable and comprehensive prep material for government exams (SSC, Banking, Railway, and more).
           </p>
           <div className="text-xs text-slate-400 space-y-1">
-            <p>📍 Durgapur, West Bengal, India</p>
             <p>
               ✉️{" "}
               <a
@@ -91,14 +90,6 @@ export default function Footer() {
               <Link href="/contact" className="hover:text-brand-600">
                 Contact Us
               </Link>
-            </li>
-            <li>
-              <a
-                href={site.telegram}
-                className="hover:text-brand-600 inline-flex items-center gap-1"
-              >
-                Telegram Channel
-              </a>
             </li>
           </ul>
         </div>
