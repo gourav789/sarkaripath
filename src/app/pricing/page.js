@@ -9,6 +9,86 @@ export const metadata = {
   description: `Transparent pricing for Sarkari Path: Get one-time lifetime access to all government exam practice questions and study material for ₹${PLAN_PRICE_RUPEES}.`,
 };
 
+const CURRENT_SETS = [
+  {
+    icon: "🧠",
+    title: "Verbal Reasoning",
+    count: "200 questions + answer key",
+  },
+  {
+    icon: "🧩",
+    title: "Non-Verbal Reasoning",
+    count: "80 questions + figures + answer key",
+  },
+  {
+    icon: "🔢",
+    title: "Quantitative Aptitude",
+    count: "200 questions + answer key",
+  },
+  {
+    icon: "📖",
+    title: "English Comprehension",
+    count: "200 questions + answer key",
+  },
+  {
+    icon: "🏛️",
+    title: "History (GK)",
+    count: "350 questions + answer key",
+  },
+  {
+    icon: "⚖️",
+    title: "Polity (GK)",
+    count: "100 questions + answer key",
+  },
+  {
+    icon: "🌍",
+    title: "Geography (GK)",
+    count: "100 questions + answer key",
+  },
+  {
+    icon: "🔬",
+    title: "General Science (GK)",
+    count: "100 questions + answer key",
+  },
+  {
+    icon: "📈",
+    title: "Economics (GK)",
+    count: "100 questions + answer key",
+  },
+  {
+    icon: "🎭",
+    title: "Art & Culture (GK)",
+    count: "100 questions + answer key",
+  },
+];
+
+const FUTURE_BENEFITS = [
+  {
+    icon: "📲",
+    text: "Free WhatsApp Channel access",
+  },
+  {
+    icon: "📰",
+    text: "Daily Current Affairs updates on WhatsApp",
+  },
+  {
+    icon: "📅",
+    text: "Monthly Current Affairs PDF",
+  },
+  {
+    icon: "📝",
+    text: "Daily 100 new SSC CGL practice questions (added regularly)",
+  },
+  {
+    icon: "🚀",
+    text: "New exams added over time (SSC CHSL, MTS, IBPS, SBI, RRB, and more) — unlocked automatically",
+  },
+  {
+    icon: "🔄",
+    text: "All future practice sets & updates included at no extra cost",
+  },
+];
+
 export default function PricingPage() {
   return (
     <div className="container-page py-12 md:py-16">
@@ -99,6 +179,81 @@ export default function PricingPage() {
               <p className="text-xs text-slate-400">
                 🔒 100% Secure Checkout powered by Razorpay
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* SECTION 1: What You Get Right Now */}
+        <div className="mt-14">
+          <div className="text-center">
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-600">
+              Instant Access
+            </span>
+            <h2 className="mt-1 text-2xl font-bold text-slate-900">
+              What You Get Right Now
+            </h2>
+            <p className="mt-1 text-sm text-slate-500">
+              Available instantly after purchase
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {CURRENT_SETS.map((set, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-3.5 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:border-brand-300 hover:shadow"
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-50 text-2xl">
+                  {set.icon}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-bold text-slate-900 text-sm sm:text-base">
+                    {set.title}
+                  </h3>
+                  <p className="text-xs font-medium text-brand-700 sm:text-sm">
+                    {set.count}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 rounded-2xl border border-brand-200 bg-brand-50/70 p-4 text-center text-xs sm:text-sm font-bold text-brand-900 shadow-xs">
+            Total: 1,530+ exam-level bilingual (Hindi + English) practice questions with detailed answer keys.
+          </div>
+        </div>
+
+        {/* SECTION 2: What You'll Also Get (Ongoing & Future) */}
+        <div className="mt-14">
+          <div className="text-center">
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-600">
+              Ongoing Value &amp; Roadmap
+            </span>
+            <h2 className="mt-1 text-2xl font-bold text-slate-900">
+              What You&apos;ll Also Get (Ongoing &amp; Future)
+            </h2>
+            <p className="mt-1 text-sm text-slate-500">
+              Included free with your one-time ₹{PLAN_PRICE_RUPEES} — no extra cost
+            </p>
+          </div>
+
+          <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+            <ul className="grid gap-3.5 sm:grid-cols-2">
+              {FUTURE_BENEFITS.map((benefit, idx) => (
+                <li
+                  key={idx}
+                  className="flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50/60 p-3.5 transition hover:bg-slate-50 hover:border-slate-200"
+                >
+                  <span className="text-xl shrink-0 leading-tight">{benefit.icon}</span>
+                  <span className="text-sm font-medium text-slate-800 leading-snug">
+                    {benefit.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50/80 p-4 text-center text-xs sm:text-sm font-semibold text-emerald-900">
+              Buy once, keep getting more — your ₹{PLAN_PRICE_RUPEES} unlocks everything we add later.
             </div>
           </div>
         </div>
