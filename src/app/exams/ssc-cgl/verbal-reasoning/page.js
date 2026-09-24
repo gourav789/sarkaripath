@@ -1,6 +1,7 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
 import LockGate from "@/components/LockGate";
+import WhatsAppJoin from "@/components/WhatsAppJoin";
 import {
   verbalReasoningMeta,
   verbalReasoningSections,
@@ -33,6 +34,7 @@ export default function VerbalReasoningPage() {
             meta={verbalReasoningMeta}
             sections={verbalReasoningSections}
           />
+          <WhatsAppJoin />
         </LockGate>
       </div>
 

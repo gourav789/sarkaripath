@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NonVerbalBank from "@/components/NonVerbalBank";
 import LockGate from "@/components/LockGate";
+import WhatsAppJoin from "@/components/WhatsAppJoin";
 import { nonVerbalMeta, nonVerbalSections } from "@/lib/reasoning-nonverbal";
 
 export const metadata = {
@@ -22,6 +23,7 @@ export default function NonVerbalReasoningPage() {
       <div className="mt-6">
         <LockGate>
           <NonVerbalBank meta={nonVerbalMeta} sections={nonVerbalSections} />
+          <WhatsAppJoin />
         </LockGate>
       </div>
 

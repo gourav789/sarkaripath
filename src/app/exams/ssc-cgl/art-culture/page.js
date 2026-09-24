@@ -1,6 +1,7 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
 import LockGate from "@/components/LockGate";
+import WhatsAppJoin from "@/components/WhatsAppJoin";
 import { artCultureMeta, artCultureSections } from "@/lib/artculture";
 
 export const metadata = {
@@ -19,6 +20,7 @@ export default function ArtCulturePage() {
       <div className="mt-6">
         <LockGate>
           <QuestionBank meta={artCultureMeta} sections={artCultureSections} />
+          <WhatsAppJoin />
         </LockGate>
       </div>
       <div className="mt-10 text-center">

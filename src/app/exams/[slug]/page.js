@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { exams, getExam, getCategory } from "@/lib/exams";
 import { getSyllabus } from "@/lib/syllabus";
+import WhatsAppJoin from "@/components/WhatsAppJoin";
 
 // Static params for all exams (fast, SEO-friendly)
 export function generateStaticParams() {
@@ -120,6 +121,10 @@ export default async function ExamDetailPage({ params }) {
           <p className="mt-1 text-slate-500">
             Exam-level practice sets. Practice questions with complete bilingual explanations &amp; answer keys.
           </p>
+
+          {/* WhatsApp channel — sirf paid users ko dikhega */}
+          <WhatsAppJoin />
+
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <Link
               href="/exams/ssc-cgl/verbal-reasoning"

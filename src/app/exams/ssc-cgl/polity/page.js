@@ -1,6 +1,7 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
 import LockGate from "@/components/LockGate";
+import WhatsAppJoin from "@/components/WhatsAppJoin";
 import { polityMeta, politySections } from "@/lib/polity";
 
 export const metadata = {
@@ -19,6 +20,7 @@ export default function PolityPage() {
       <div className="mt-6">
         <LockGate>
           <QuestionBank meta={polityMeta} sections={politySections} />
+          <WhatsAppJoin />
         </LockGate>
       </div>
       <div className="mt-10 text-center">

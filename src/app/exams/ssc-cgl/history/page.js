@@ -1,6 +1,7 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
 import LockGate from "@/components/LockGate";
+import WhatsAppJoin from "@/components/WhatsAppJoin";
 import { historyMeta, historySections } from "@/lib/history";
 
 export const metadata = {
@@ -22,6 +23,7 @@ export default function HistoryPage() {
       <div className="mt-6">
         <LockGate>
           <QuestionBank meta={historyMeta} sections={historySections} />
+          <WhatsAppJoin />
         </LockGate>
       </div>
 

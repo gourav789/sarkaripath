@@ -1,6 +1,7 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
 import LockGate from "@/components/LockGate";
+import WhatsAppJoin from "@/components/WhatsAppJoin";
 import { englishMeta, englishSections } from "@/lib/english";
 
 export const metadata = {
@@ -22,6 +23,7 @@ export default function EnglishComprehensionPage() {
       <div className="mt-6">
         <LockGate>
           <QuestionBank meta={englishMeta} sections={englishSections} />
+          <WhatsAppJoin />
         </LockGate>
       </div>
 

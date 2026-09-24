@@ -1,6 +1,7 @@
 import Link from "next/link";
 import QuestionBank from "@/components/QuestionBank";
 import LockGate from "@/components/LockGate";
+import WhatsAppJoin from "@/components/WhatsAppJoin";
 import { geographyMeta, geographySections } from "@/lib/geography";
 
 export const metadata = {
@@ -19,6 +20,7 @@ export default function GeographyPage() {
       <div className="mt-6">
         <LockGate>
           <QuestionBank meta={geographyMeta} sections={geographySections} />
+          <WhatsAppJoin />
         </LockGate>
       </div>
       <div className="mt-10 text-center">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { exams, categories, getExamsByCategory } from "@/lib/exams";
 import ExamCard from "@/components/ExamCard";
+import WhatsAppJoin from "@/components/WhatsAppJoin";
 
 const categoryIcons = {
   ssc: "📊",
@@ -107,6 +108,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* WhatsApp channel — sirf paid users ko dikhega */}
+      <div className="container-page pt-8">
+        <WhatsAppJoin />
+      </div>
 
       {/* ===== STATS BAND ===== */}
       <section className="border-b border-slate-200 bg-white">

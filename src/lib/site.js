@@ -8,4 +8,5 @@ export const site = {
   location: "Durgapur, West Bengal, India",
   // Social / contact
   telegram: "https://t.me/your_channel",
+  whatsappChannel: "https://whatsapp.com/channel/0029Vb8LLDi5fM5jXw3FdY3j",
 };
