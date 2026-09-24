@@ -1,3 +1,7 @@
+// TEMP TEST PRICE — change back to 299 after testing
+export const PLAN_PRICE_RUPEES = 1;
+export const PLAN_PRICE_PAISE = PLAN_PRICE_RUPEES * 100;
+
 // Pricing plans. Yahan se price/features aasaani se badal sakte ho.
 export const plans = [
   {
@@ -30,7 +34,7 @@ export const plans = [
   {
     id: "premium",
     name: "All-Access",
-    price: 299,
+    price: PLAN_PRICE_RUPEES,
     period: "one-time",
     tagline: "Sabhi exams unlock",
     features: [

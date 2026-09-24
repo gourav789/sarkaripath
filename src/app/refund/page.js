@@ -1,4 +1,5 @@
 import { site } from "@/lib/site";
+import { PLAN_PRICE_RUPEES } from "@/lib/plans";
 import Link from "next/link";
 
 export const metadata = {
@@ -74,10 +75,10 @@ export default function RefundPage() {
           <section>
             <h2 className="text-base font-bold text-slate-900">4. Cancellation Policy</h2>
             <p className="mt-2">
-              Our plan is offered as a <strong>one-time payment of ₹299 for Lifetime Access</strong>. 
+              Our plan is offered as a <strong>one-time payment of ₹{PLAN_PRICE_RUPEES} for Lifetime Access</strong>. 
             </p>
             <p className="mt-2">
-              <strong>There are NO recurring monthly or annual billing cycles.</strong> Consequently, there is no recurring subscription that requires cancellation. Once you pay ₹299, you will never be charged again for that plan.
+              <strong>There are NO recurring monthly or annual billing cycles.</strong> Consequently, there is no recurring subscription that requires cancellation. Once you pay ₹{PLAN_PRICE_RUPEES}, you will never be charged again for that plan.
             </p>
           </section>
 

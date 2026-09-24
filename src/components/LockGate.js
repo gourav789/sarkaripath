@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useAuth } from "./AuthProvider";
+import { PLAN_PRICE_RUPEES } from "@/lib/plans";
 
 export default function LockGate({ children }) {
   const { user, loading, paid } = useAuth();
@@ -41,7 +42,7 @@ export default function LockGate({ children }) {
             href="/pricing"
             className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
           >
-            View Pricing (₹299 Lifetime)
+            View Pricing (₹{PLAN_PRICE_RUPEES} Lifetime)
           </Link>
         </div>
       </div>
@@ -83,7 +84,7 @@ export default function LockGate({ children }) {
               </li>
               <li className="flex items-center gap-2">
                 <span className="font-bold text-brand-600">✓</span>
-                <span>One-time ₹299 — zero subscriptions</span>
+                <span>One-time ₹{PLAN_PRICE_RUPEES} — zero subscriptions</span>
               </li>
             </ul>
           </div>
@@ -93,7 +94,7 @@ export default function LockGate({ children }) {
               href="/pricing"
               className="w-full rounded-xl bg-brand-600 px-7 py-3 text-base font-bold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700 sm:w-auto"
             >
-              Unlock for ₹299
+              Unlock for ₹{PLAN_PRICE_RUPEES}
             </Link>
           </div>
           <p className="mt-3 text-xs text-slate-400">

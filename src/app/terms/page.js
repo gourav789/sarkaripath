@@ -1,4 +1,5 @@
 import { site } from "@/lib/site";
+import { PLAN_PRICE_RUPEES } from "@/lib/plans";
 import Link from "next/link";
 
 export const metadata = {
@@ -60,7 +61,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-base font-bold text-slate-900">4. Plans, Pricing, and Payment Terms</h2>
             <p className="mt-2">
-              Sarkari Path offers a <strong>Lifetime Access Plan for a one-time payment of ₹299 (INR)</strong>. 
+              Sarkari Path offers a <strong>Lifetime Access Plan for a one-time payment of ₹{PLAN_PRICE_RUPEES} (INR)</strong>. 
             </p>
             <ul className="mt-2 list-disc space-y-1 pl-5">
               <li>This is a one-time purchase with no recurring monthly subscriptions or hidden charges.</li>
@@ -104,7 +105,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-base font-bold text-slate-900">8. Limitation of Liability</h2>
             <p className="mt-2">
-              To the maximum extent permitted by applicable law, Sarkari Path and its operators shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use or inability to use our digital materials, server downtime, or unforeseen internet outages. In any event, our total liability shall not exceed the amount actually paid by you (₹299).
+              To the maximum extent permitted by applicable law, Sarkari Path and its operators shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use or inability to use our digital materials, server downtime, or unforeseen internet outages. In any event, our total liability shall not exceed the amount actually paid by you (₹{PLAN_PRICE_RUPEES}).
             </p>
           </section>
 

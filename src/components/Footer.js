@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { PLAN_PRICE_RUPEES } from "@/lib/plans";
 
 export default function Footer() {
   return (
@@ -78,7 +79,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/pricing" className="hover:text-brand-600">
-                Lifetime Access (₹299)
+                Lifetime Access (₹{PLAN_PRICE_RUPEES})
               </Link>
             </li>
             <li>

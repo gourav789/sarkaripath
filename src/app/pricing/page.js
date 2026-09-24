@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { exams } from "@/lib/exams";
+import { PLAN_PRICE_RUPEES } from "@/lib/plans";
 import BuyButton from "@/components/BuyButton";
 
 export const metadata = {
   title: "Pricing & Plans — Sarkari Path",
-  description:
-    "Transparent pricing for Sarkari Path: Get one-time lifetime access to all government exam practice questions and study material for ₹299.",
+  description: `Transparent pricing for Sarkari Path: Get one-time lifetime access to all government exam practice questions and study material for ₹${PLAN_PRICE_RUPEES}.`,
 };
 
 export default function PricingPage() {
@@ -45,7 +45,7 @@ export default function PricingPage() {
 
               <div className="text-center sm:text-right">
                 <div className="flex items-baseline justify-center gap-1 sm:justify-end">
-                  <span className="text-4xl font-extrabold text-slate-900">₹299</span>
+                  <span className="text-4xl font-extrabold text-slate-900">₹{PLAN_PRICE_RUPEES}</span>
                   <span className="text-sm font-medium text-slate-500">/ one-time</span>
                 </div>
                 <span className="mt-1 inline-block rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">
@@ -92,7 +92,7 @@ export default function PricingPage() {
                 <BuyButton
                   planId="premium"
                   planName="Lifetime All-Access"
-                  amount={299}
+                  amount={PLAN_PRICE_RUPEES}
                   className="bg-brand-600 text-white hover:bg-brand-700 shadow-md text-base font-bold py-3.5 px-8"
                 />
               </div>
@@ -168,7 +168,7 @@ export default function PricingPage() {
             <h3 className="font-bold text-slate-900">Payment & Pricing Guarantees</h3>
             <ul className="mt-3 space-y-2">
               <li>
-                <strong>One-Time Payment:</strong> Pay ₹299 once and enjoy lifetime access. There are no monthly recurring subscriptions or auto-debits.
+                <strong>One-Time Payment:</strong> Pay ₹{PLAN_PRICE_RUPEES} once and enjoy lifetime access. There are no monthly recurring subscriptions or auto-debits.
               </li>
               <li>
                 <strong>No Hidden Charges:</strong> What you see is what you pay. Goods and Services Tax (GST) is calculated transparently where applicable.
