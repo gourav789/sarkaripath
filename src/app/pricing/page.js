@@ -165,6 +165,30 @@ export default function PricingPage() {
                 <span className="font-bold text-brand-600">✓</span>
                 <span>Instant digital access on mobile, tablet, and PC</span>
               </li>
+              <li className="flex items-start gap-2">
+                <span className="font-bold text-brand-600">✓</span>
+                <span>1,530+ exam-level practice questions available right now</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="font-bold text-brand-600">✓</span>
+                <span>Free WhatsApp Channel access</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="font-bold text-brand-600">✓</span>
+                <span>Daily Current Affairs updates on WhatsApp</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="font-bold text-brand-600">✓</span>
+                <span>Monthly Current Affairs PDF (free for members)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="font-bold text-brand-600">✓</span>
+                <span>Daily 100 new SSC CGL practice questions</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="font-bold text-brand-600">✓</span>
+                <span>Detailed answer key for every question</span>
+              </li>
             </ul>
 
             <div className="mt-8 flex flex-col items-center gap-4">
