@@ -63,6 +63,20 @@ const CURRENT_SETS = [
   },
 ];
 
+// SSC CGL 2026 Tier I Live Test Series (paid users only — content added later)
+const TEST_SERIES = [
+  { title: "SSC CGL 2026: Tier I Test Series - Live Test 1 (100 Marks)", q: 100, marks: 100, time: "60 Mins", users: "12.4k" },
+  { title: "SSC CGL 2026: Tier I Test Series - Live Test 2 (100 Marks)", q: 100, marks: 100, time: "60 Mins", users: "10.1k" },
+  { title: "SSC CGL 2026: Tier I Test Series - Live Test 3 (100 Marks)", q: 100, marks: 100, time: "60 Mins", users: "9.8k" },
+  { title: "SSC CGL 2026: Tier I Test Series - Live Test 4 (100 Marks)", q: 100, marks: 100, time: "60 Mins", users: "8.6k" },
+  { title: "SSC CGL 2026: Tier I Test Series - Live Test 5 (100 Marks)", q: 100, marks: 100, time: "60 Mins", users: "7.9k" },
+  { title: "SSC CGL 2026: Tier I Test Series - Live Test 6 (100 Marks)", q: 100, marks: 100, time: "60 Mins", users: "7.2k" },
+  { title: "SSC CGL 2026: Tier I Test Series - Live Test 7 (100 Marks)", q: 100, marks: 100, time: "60 Mins", users: "6.5k" },
+  { title: "SSC CGL 2026: Tier I Test Series - Live Test 8 (100 Marks)", q: 100, marks: 100, time: "60 Mins", users: "5.8k" },
+  { title: "SSC CGL 2026: Tier I Test Series - Live Test 9 (100 Marks)", q: 100, marks: 100, time: "60 Mins", users: "5.1k" },
+  { title: "SSC CGL 2026: Tier I Test Series - Live Test 10 (100 Marks)", q: 100, marks: 100, time: "60 Mins", users: "4.7k" },
+];
+
 const FUTURE_BENEFITS = [
   {
     icon: "📲",
@@ -207,6 +221,59 @@ export default function PricingPage() {
                 🔒 100% Secure Checkout powered by Razorpay
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* TEST SERIES: SSC CGL 2026 Tier I Live Tests (locked — for paid users) */}
+        <div className="mt-14">
+          <div className="text-center">
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-600">
+              Premium Test Series
+            </span>
+            <h2 className="mt-1 text-2xl font-bold text-slate-900">
+              SSC CGL 2026 — Tier I Test Series
+            </h2>
+            <p className="mt-1 text-sm text-slate-500">
+              Full-length live mock tests (100 marks each). Unlock with Lifetime Access.
+            </p>
+          </div>
+
+          <div className="mt-6 space-y-3">
+            {TEST_SERIES.map((test, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between"
+              >
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center gap-1 rounded-md bg-rose-500 px-2 py-0.5 text-[10px] font-bold uppercase text-white">
+                      ● Live Test
+                    </span>
+                    <span className="rounded-md bg-emerald-500 px-2 py-0.5 text-[10px] font-bold uppercase text-white">
+                      Premium
+                    </span>
+                    <span className="text-xs font-medium text-slate-400">⚡ {test.users} Users</span>
+                  </div>
+                  <h3 className="mt-1.5 text-sm font-bold text-slate-900">
+                    {test.title}
+                  </h3>
+                  <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500">
+                    <span>❓ {test.q} Questions</span>
+                    <span>📄 {test.marks} Marks</span>
+                    <span>⏱️ {test.time}</span>
+                  </div>
+                </div>
+                <div className="shrink-0">
+                  <span className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-4 py-2.5 text-sm font-bold text-slate-500">
+                    🔒 Locked
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 rounded-2xl border border-brand-200 bg-brand-50/70 p-4 text-center text-xs sm:text-sm font-semibold text-brand-900">
+            🔓 Unlock all 10 Tier I live tests + 2000+ practice questions with one-time ₹{PLAN_PRICE_RUPEES} Lifetime Access.
           </div>
         </div>
 
