@@ -3,8 +3,13 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import { mockTest1Meta, mockTest1Questions } from "@/lib/mockTest1Data";
+import { useAuth } from "@/components/AuthProvider";
 
 export default function CglMockTest() {
+  // Logged-in user — har user ka apna alag saved state ho (mix na ho)
+  const { user } = useAuth();
+  // Per-user localStorage key. Agar kisi wajah se user na ho to "guest".
+  const storageKey = `cgl_mock_test_1_state_${user?.uid || "guest"}`;
   // Test stages: "intro" | "in_progress" | "completed"
   const [stage, setStage] = useState("intro");
   
@@ -39,10 +44,10 @@ export default function CglMockTest() {
   // Timer reference
   const timerRef = useRef(null);
 
-  // Restore test from localStorage if available
+  // Restore test from localStorage if available (per-user)
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("cgl_mock_test_1_state");
+      const saved = localStorage.getItem(storageKey);
       if (saved) {
         const parsed = JSON.parse(saved);
         if (parsed.stage === "in_progress") {
@@ -74,7 +79,7 @@ export default function CglMockTest() {
     } catch (e) {
       console.error("Failed to restore mock test state", e);
     }
-  }, []);
+  }, [storageKey]);
 
   // Timer countdown loop
   useEffect(() => {
@@ -101,7 +106,7 @@ export default function CglMockTest() {
     if (stage === "in_progress" && startTime) {
       try {
         localStorage.setItem(
-          "cgl_mock_test_1_state",
+          storageKey,
           JSON.stringify({
             stage: "in_progress",
             startTime,
@@ -117,7 +122,7 @@ export default function CglMockTest() {
     } else if (stage === "completed") {
       try {
         localStorage.setItem(
-          "cgl_mock_test_1_state",
+          storageKey,
           JSON.stringify({
             stage: "completed",
             answers,
@@ -128,7 +133,7 @@ export default function CglMockTest() {
         // ignore
       }
     }
-  }, [stage, startTime, answers, markedForReview, visitedQuestions, currentIndex]);
+  }, [stage, startTime, answers, markedForReview, visitedQuestions, currentIndex, storageKey]);
 
   // Start test handler
   const handleStartTest = () => {
@@ -151,7 +156,7 @@ export default function CglMockTest() {
   // Retake test
   const handleRetakeTest = () => {
     try {
-      localStorage.removeItem("cgl_mock_test_1_state");
+      localStorage.removeItem(storageKey);
     } catch (e) {}
     setStage("intro");
     setTimeLeft(mockTest1Meta.durationSeconds);
