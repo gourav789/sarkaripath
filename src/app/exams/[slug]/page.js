@@ -129,8 +129,13 @@ export default async function ExamDetailPage({ params }) {
           <div className="mt-6 overflow-hidden rounded-2xl border-2 border-brand-500/40 bg-gradient-to-r from-brand-900 via-slate-900 to-brand-950 p-6 text-white shadow-xl">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="max-w-xl">
-                <div className="inline-flex items-center gap-2 rounded-full bg-accent-500/20 px-3 py-0.5 text-xs font-bold text-accent-400 border border-accent-400/30">
-                  ⚡ Full Length CBT Mock Test
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-accent-500/20 px-3 py-0.5 text-xs font-bold text-accent-400 border border-accent-400/30">
+                    ⚡ Full Length CBT Mock Test
+                  </div>
+                  <div className="inline-flex items-center gap-1 rounded-full bg-white/10 px-3 py-0.5 text-xs font-bold text-white border border-white/20">
+                    🔒 Premium
+                  </div>
                 </div>
                 <h3 className="mt-2 text-xl font-extrabold text-white">
                   SSC CGL Mock Test 1 (100 Questions)
@@ -144,7 +149,7 @@ export default async function ExamDetailPage({ params }) {
                 className="inline-flex items-center gap-2 rounded-xl bg-accent-500 px-5 py-3 text-sm font-extrabold text-slate-950 shadow-lg shadow-accent-500/30 transition hover:bg-accent-400 active:scale-95"
               >
                 <span>Take Mock Test 1</span>
-                <span>⏱️</span>
+                <span>🔒</span>
               </Link>
             </div>
           </div>

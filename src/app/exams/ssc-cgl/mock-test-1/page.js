@@ -1,4 +1,5 @@
 import CglMockTest from "@/components/CglMockTest";
+import LockGate from "@/components/LockGate";
 
 export const metadata = {
   title: "SSC CGL Mock Test 1 — Full 100 Questions Practice Set | SarkariPath",
@@ -7,5 +8,11 @@ export const metadata = {
 };
 
 export default function MockTest1Page() {
-  return <CglMockTest />;
+  return (
+    <div className="container-page py-10">
+      <LockGate>
+        <CglMockTest />
+      </LockGate>
+    </div>
+  );
 }
