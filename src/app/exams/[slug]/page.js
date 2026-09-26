@@ -125,6 +125,30 @@ export default async function ExamDetailPage({ params }) {
           {/* WhatsApp channel — sirf paid users ko dikhega */}
           <WhatsAppJoin />
 
+          {/* Full Mock Test 1 Card */}
+          <div className="mt-6 overflow-hidden rounded-2xl border-2 border-brand-500/40 bg-gradient-to-r from-brand-900 via-slate-900 to-brand-950 p-6 text-white shadow-xl">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="max-w-xl">
+                <div className="inline-flex items-center gap-2 rounded-full bg-accent-500/20 px-3 py-0.5 text-xs font-bold text-accent-400 border border-accent-400/30">
+                  ⚡ Full Length CBT Mock Test
+                </div>
+                <h3 className="mt-2 text-xl font-extrabold text-white">
+                  SSC CGL Mock Test 1 (100 Questions)
+                </h3>
+                <p className="mt-1 text-xs text-slate-300">
+                  Complete 120-minute timed test with negative marking (+2, -0.5), auto-submit, bilingual questions &amp; step-by-step English explanations.
+                </p>
+              </div>
+              <Link
+                href="/exams/ssc-cgl/mock-test-1"
+                className="inline-flex items-center gap-2 rounded-xl bg-accent-500 px-5 py-3 text-sm font-extrabold text-slate-950 shadow-lg shadow-accent-500/30 transition hover:bg-accent-400 active:scale-95"
+              >
+                <span>Take Mock Test 1</span>
+                <span>⏱️</span>
+              </Link>
+            </div>
+          </div>
+
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <Link
               href="/exams/ssc-cgl/verbal-reasoning"
