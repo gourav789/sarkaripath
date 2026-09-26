@@ -234,7 +234,7 @@ export default function PricingPage() {
               SSC CGL 2026 — Tier I Test Series
             </h2>
             <p className="mt-1 text-sm text-slate-500">
-              Full-length live mock tests (100 marks each). Unlock with Lifetime Access.
+              Full-Length Live Mock Tests (100 Marks Each) • Lifetime Access • Get 10 Daily Practice Sets
             </p>
           </div>
 
